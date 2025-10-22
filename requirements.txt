@@ -1,0 +1,6 @@
+fastapi~=0.119.0
+uvicorn
+nflreadpy~=0.1.3
+pydantic~=2.12.3
+pydantic-settings~=2.11.0
+polars~=1.34.0
