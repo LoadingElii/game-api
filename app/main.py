@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import game_router
+from app.routers import game_router, prediction_router
 from app.core.config import settings
 
 app = FastAPI(
@@ -10,6 +10,7 @@ app = FastAPI(
 )
 
 app.include_router(game_router.router)
+app.include_router(prediction_router.router)
 
 @app.get("/")
 def root():
