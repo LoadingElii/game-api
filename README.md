@@ -42,7 +42,7 @@ It’s lightweight, asynchronous, and designed for easy integration with other m
     "away_team": "PIT",
     "home_score": 14,
     "away_score": 21,
-    "gameday": "2025-11-14"
+    "gameday": "2025-10-16"
   }
 ]
 ```
@@ -83,7 +83,7 @@ Example integration flow:
 ### 1. Clone the repo  
 ```bash
 git clone https://github.com/LoadingElii/game-api.git
-cd gameapi
+cd game-api
 ```
 
 ### 2. Install dependencies  
