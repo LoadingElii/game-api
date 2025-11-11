@@ -1,17 +1,17 @@
-# ⚡ GameAPI – NFL Prediction Engine
+# GameAPI – NFL Prediction Engine
 
 **GameAPI** is a **FastAPI** microservice that generates and serves NFL game predictions.  
 It powers the Java-based `FieldVision` backend by providing predictive analytics and live game data.
 
 ---
 
-## 🚀 Overview
+## Overview
 GameAPI retrieves live NFL game data using the `nflreadpy` library and provides machine learning-based predictions.  
 It’s lightweight, asynchronous, and designed for easy integration with other microservices.
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 - **Language:** Python 3.11  
 - **Framework:** FastAPI  
 - **Cache:** Redis 
@@ -22,9 +22,9 @@ It’s lightweight, asynchronous, and designed for easy integration with other m
 
 ---
 
-## 🧠 Modules & Endpoints
+## Modules & Endpoints
 
-### 🎮 Game Router  
+### Game Router  
 **Base URL:** `/games`
 
 | Method | Endpoint | Description |
@@ -49,7 +49,7 @@ It’s lightweight, asynchronous, and designed for easy integration with other m
 
 ---
 
-### 🔮 Prediction Router  
+### Prediction Router  
 **Base URL:** `/predictions`
 
 | Method | Endpoint | Description                                 |
@@ -68,7 +68,7 @@ It’s lightweight, asynchronous, and designed for easy integration with other m
 
 ---
 
-## 🔗 Integration with FieldVision
+## Integration with FieldVision
 GameAPI is consumed by the **FieldVision** Spring Boot service for prediction and game data.  
 Example integration flow:
 
@@ -78,7 +78,7 @@ Example integration flow:
 
 ---
 
-## 📦 Setup & Run
+## Setup & Run
 
 ### 1. Clone the repo  
 ```bash
@@ -98,14 +98,14 @@ uvicorn main:app --reload
 
 ---
 
-## 🧪 Testing  
+## Testing  
 ```bash
 pytest
 ```
 
 ---
 
-## 👨🏾‍💻 Author  
+## Author  
 **Delijhia Brown**  
 - [GitHub](https://github.com/LoadingElii)  
 - [LinkedIn](https://linkedin.com/in/delijhia-brown)  
@@ -113,5 +113,5 @@ pytest
 
 ---
 
-## 📄 License  
+## License  
 MIT License
