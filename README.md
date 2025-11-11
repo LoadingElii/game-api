@@ -59,7 +59,6 @@ It’s lightweight, asynchronous, and designed for easy integration with other m
 **Example Response:**  
 ```json
 {
-  "prediction_id": 1,
   "home_team": "CAR",
   "away_team": "BUF",
   "home_win_probability": 0.45,
