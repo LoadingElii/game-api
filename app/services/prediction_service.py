@@ -6,15 +6,15 @@ from app.schemas.prediction_schema import PredictionSchema
 from app.services.stats_service import calculate_ratings, get_stats_for_team
 
 
-async def win_prediction_for_game(home_team: str, away_team: str):
-    cache_key = f"{home_team}/{away_team}"
+async def win_prediction_for_game(game):
+    cache_key = f"{game.home_team}/{game.away_team}"
     cached_prediction = await get_cache(cache_key)
 
     if cached_prediction:
         return PredictionSchema(**cached_prediction)
 
-    home_team_stats = get_stats_for_team(home_team)
-    away_team_stats = get_stats_for_team(away_team)
+    home_team_stats = get_stats_for_team(game.home_team)
+    away_team_stats = get_stats_for_team(game.away_team)
 
     home_team_rating = calculate_ratings(home_team_stats["offense"],
                                          away_team_stats["defense"])
@@ -30,7 +30,9 @@ async def win_prediction_for_game(home_team: str, away_team: str):
 
     print(home_team_win_probability, away_team_win_probability)
 
-    prediction = PredictionSchema(home_team=home_team, away_team=away_team,
+    prediction = PredictionSchema(game_id=game.game_id,
+                                  home_team=game.home_team,
+                                  away_team=game.away_team,
                                   home_win_probability=round(home_team_win_probability, 2),
                                   away_win_probability=round(away_team_win_probability, 2)
                                   )
