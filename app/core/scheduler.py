@@ -18,7 +18,7 @@ async def refresh_caches():
 
     #refresh prediction cache
     for game in games:
-        prediction = await win_prediction_for_game(game["home_team"], game["away_team"])
+        prediction = await win_prediction_for_game(game.game_id, game.home_team, game.away_team)
         cache_key = f"{game['home_team']}/{game['away_team']}"
         await set_cache(cache_key, prediction.model_dump(), expire_seconds=86400)
     logging.info(f"Cache refresh complete")

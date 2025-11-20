@@ -6,7 +6,7 @@ import polars as pl
 from app.core.cache import set_cache, get_cache
 
 
-def get_games_by_week():
+async def get_games_by_week():
     season = datetime.today().year
     week = nfl.get_current_week()
 
@@ -38,7 +38,7 @@ def get_games_by_week():
 
 
 async def update_game_cache():
-    games = get_games_by_week()
+    games =  await get_games_by_week()
     await set_cache("games", games, expire_seconds=86400)
     return games
 
@@ -46,5 +46,5 @@ async def update_game_cache():
 async def get_games_from_cache():
     games = await get_cache("games")
     if not games:
-        return update_game_cache()
+        return await update_game_cache()
     return games
