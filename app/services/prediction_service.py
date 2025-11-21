@@ -36,6 +36,7 @@ async def win_prediction_for_game(game_id: str, home_team: str, away_team: str):
                                   home_win_probability=round(home_team_win_probability, 2),
                                   away_win_probability=round(away_team_win_probability, 2)
                                   )
-    await set_cache(cache_key, prediction.model_dump, expire_seconds=86400)
+
+    await set_cache(cache_key, prediction.model_dump(), expire_seconds=86400)
 
     return prediction
